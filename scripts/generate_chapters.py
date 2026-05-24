@@ -10,14 +10,20 @@ from story_content import STORY, branch_for
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "chapters.json"
 
-STUDIO_BACKGROUNDS = frozenset({"bg_画室白天", "bg_画室晚上"})
-BGM_STUDIO = "bgm_studio"
+SPECIAL_BG_BGM = {
+    "bg_商场1": "bgm_scene_6",
+    "bg_商场2": "bgm_scene_6",
+    "bg_玩具店": "bgm_scene_6",
+    "bg_迪士尼": "bgm_scene_7",
+    "bg_啤酒节": "bgm_scene_8",
+}
 
 
-def bgm_for_background(bg, chapter_bgm):
-    if bg in STUDIO_BACKGROUNDS:
-        return BGM_STUDIO
-    return chapter_bgm
+def chapter_bgm(meta, bg=None):
+    """章节 BGM；商场/迪士尼/啤酒节背景用 6–8 号专曲。"""
+    if bg and bg in SPECIAL_BG_BGM:
+        return SPECIAL_BG_BGM[bg]
+    return meta["bgm"]
 
 
 CHAPTERS_META = [
@@ -27,7 +33,7 @@ CHAPTERS_META = [
         "bg": "bg_欧洲画展",
         "bg2": "bg_画作",
         "bg3": "bg_画展外",
-        "bgm": "bgm_gallery_studio",
+        "bgm": "bgm_scene_1",
         "scene_pool": ["bg_欧洲画展", "bg_画作", "bg_画展外", "bg_欧洲街景", "bg_画室晚上"],
         "finale_bg": "bg_画展外",
         "pad_bg": "bg_欧洲画展",
@@ -39,7 +45,7 @@ CHAPTERS_META = [
         "bg": "bg_商场1",
         "bg2": "bg_玩具店",
         "bg3": "bg_商场2",
-        "bgm": "bgm_mall_toyshop",
+        "bgm": "bgm_scene_6",
         "scene_pool": ["bg_商场1", "bg_玩具店", "bg_商场2", "bg_画作"],
         "finale_bg": "bg_商场1",
         "pad_bg": "bg_商场1",
@@ -51,7 +57,7 @@ CHAPTERS_META = [
         "bg": "bg_办公室",
         "bg2": "bg_布场1",
         "bg3": "bg_布场2",
-        "bgm": "bgm_office_event",
+        "bgm": "bgm_scene_3",
         "scene_pool": ["bg_办公室", "bg_布场1", "bg_布场2", "bg_布场3", "bg_后台走廊"],
         "finale_bg": "bg_布场2",
         "pad_bg": "bg_布场2",
@@ -62,7 +68,7 @@ CHAPTERS_META = [
         "bg": "bg_会所1",
         "bg2": "bg_豪宅",
         "bg3": "bg_花园夜间",
-        "bgm": "bgm_club_mansion_suite",
+        "bgm": "bgm_scene_5",
         "scene_pool": ["bg_会所1", "bg_豪宅", "bg_花园夜间"],
         "finale_bg": "bg_会所1",
         "pad_bg": "bg_会所1",
@@ -73,7 +79,7 @@ CHAPTERS_META = [
         "bg": "bg_片场1",
         "bg2": "bg_片场2",
         "bg3": "bg_片场3",
-        "bgm": "bgm_film_set",
+        "bgm": "bgm_scene_5",
         "scene_pool": ["bg_片场1", "bg_片场2", "bg_片场3", "bg_片场4"],
         "finale_bg": "bg_车内",
         "pad_bg": "bg_片场2",
@@ -85,7 +91,7 @@ CHAPTERS_META = [
         "bg": "bg_啤酒节",
         "bg2": "bg_演唱会1",
         "bg3": "bg_后台走廊",
-        "bgm": "bgm_festival_concert",
+        "bgm": "bgm_scene_2",
         "scene_pool": ["bg_啤酒节", "bg_演唱会1", "bg_后台走廊"],
         "finale_bg": "bg_后台走廊",
         "pad_bg": "bg_演唱会1",
@@ -97,7 +103,7 @@ CHAPTERS_META = [
         "bg": "bg_夜路1",
         "bg2": "bg_夜路2",
         "bg3": "bg_夜路3",
-        "bgm": "bgm_nightroad",
+        "bgm": "bgm_scene_4",
         "scene_pool": ["bg_夜路1", "bg_夜路2", "bg_夜路3", "bg_地铁", "bg_画室晚上"],
         "finale_bg": "bg_夜路2",
         "pad_bg": "bg_夜路1",
@@ -109,7 +115,7 @@ CHAPTERS_META = [
         "bg": "bg_会所2",
         "bg2": "bg_火锅包间",
         "bg3": "bg_花园夜间",
-        "bgm": "bgm_club_mansion_suite",
+        "bgm": "bgm_scene_5",
         "scene_pool": ["bg_会所2", "bg_火锅包间", "bg_花园夜间"],
         "finale_bg": "bg_会所2",
         "pad_bg": "bg_会所2",
@@ -120,7 +126,7 @@ CHAPTERS_META = [
         "bg": "bg_樱花公园1",
         "bg2": "bg_樱花公园2",
         "bg3": "bg_樱花公园2",
-        "bgm": "bgm_dream_park",
+        "bgm": "bgm_scene_2",
         "scene_pool": ["bg_樱花公园1", "bg_樱花公园2"],
         "finale_bg": "bg_樱花公园2",
         "pad_bg": "bg_樱花公园1",
@@ -132,7 +138,7 @@ CHAPTERS_META = [
         "bg": "bg_发布会1",
         "bg2": "bg_总统套房",
         "bg3": "bg_画室白天",
-        "bgm": "bgm_gallery_studio",
+        "bgm": "bgm_scene_3",
         "scene_pool": ["bg_发布会1", "bg_总统套房", "bg_画室白天"],
         "finale_bg": "bg_画室白天",
         "pad_bg": "bg_发布会1",
@@ -506,7 +512,7 @@ def branch_dialog_beat(
         "speaker": who,
         "text": line,
         "background": bg,
-        "bgm": bgm_for_background(bg, meta["bgm"]),
+        "bgm": chapter_bgm(meta, bg),
         "characters": chars,
     }
     if effects:
@@ -737,13 +743,14 @@ def inject_side_quests(beats, ch_n, scene):
         idx = min(sq["at"], len(beats))
         if sq.get("bg"):
             scene.force(sq["bg"])
+        sq_bg = sq.get("bg") or scene.resolve(text=sq["text"])
         beat = {
             "id": sq["id"],
             "type": "dialog",
             "speaker": sq["speaker"],
             "text": sq["text"],
-            "background": sq.get("bg") or scene.resolve(text=sq["text"]),
-            "bgm": bgm_for_background(sq.get("bg") or scene.current, meta["bgm"]),
+            "background": sq_bg,
+            "bgm": chapter_bgm(meta, sq_bg),
             "characters": scene_chars_for_line(
                 sq["speaker"], ch_n, sq["text"], sq.get("npc")
             ),
@@ -848,12 +855,13 @@ def inject_encounters(beats, ch_n, speakers, scene):
             eff2["branch_tag"] = tag
             options.append({"text": txt, "effects": eff2, "branch": branch})
         host = encounter_host_name(enc)
+        enc_bg = enc.get("bg") or scene.current
         choice_beat = {
             "id": enc["id"],
             "type": "choice",
             "question": enc.get("question"),
-            "background": enc.get("bg") or scene.current,
-            "bgm": bgm_for_background(enc.get("bg") or scene.current, meta["bgm"]),
+            "background": enc_bg,
+            "bgm": chapter_bgm(meta, enc_bg),
             "characters": encounter_choice_characters(ch_n, enc),
             "encounter_npc": enc_npc,
             "host_speaker": host,
@@ -895,7 +903,7 @@ def build_chapter(meta):
             "speaker": speaker,
             "text": text,
             "background": resolved,
-            "bgm": bgm_for_background(resolved, meta["bgm"]),
+            "bgm": chapter_bgm(meta, resolved),
             "characters": scene_chars(
                 speaker,
                 n,
@@ -941,7 +949,7 @@ def build_chapter(meta):
             "speaker": "张艺兴",
             "text": "散场后工作室见。先戴耳机听段新编舞 DEMO，别在这儿挤。",
             "background": demo_bg,
-            "bgm": meta["bgm"],
+            "bgm": chapter_bgm(meta, demo_bg),
             "characters": scene_chars("张艺兴", n, text="跳舞"),
         })
 
@@ -993,7 +1001,7 @@ def build_chapter(meta):
             "type": "choice",
             "question": ct[0],
             "background": panel_bg,
-            "bgm": bgm_for_background(panel_bg, meta["bgm"]),
+            "bgm": chapter_bgm(meta, panel_bg),
             "characters": scene_chars(
                 "葵",
                 n,

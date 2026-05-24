@@ -1,7 +1,7 @@
 /** 封面与结局共用的循环 BGM（由 音频1.mp4 提取，音量对齐 scene BGM） */
 const COVER_ENDING_BGM = "bgm_title_ending";
 const COVER_ENDING_BGM_FILE = "bgm/bgm_10_title_ending.mp3";
-const BGM_CACHE_BUST = "20260530g";
+const BGM_CACHE_BUST = "20260520d";
 const BGM_VOLUME = 0.32;
 const COVER_BGM_FADE_MS = 1500;
 

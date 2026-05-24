@@ -1,7 +1,7 @@
 /**
  * 从 cursor_asset_manifest.json 构建资源注册表
  */
-const ASSET_CACHE_BUST = "20260524a";
+const ASSET_CACHE_BUST = "20260520d";
 
 class AssetRegistry {
   constructor() {
