@@ -1409,13 +1409,20 @@ class StarlightEngine {
     const ch = this.currentChapter();
     if (this.beatIndex >= ch.beats.length) {
       if (this.chapterIndex < this.chapters.length - 1) {
+        const prevChapter = this.chapterIndex;
         this.chapterIndex += 1;
         this.beatIndex = 0;
         if (this.chapterNumber() >= 3) {
           this.state.xz_identity_revealed = true;
         }
         this.syncWeChatStory();
-        this.showChapterOpening(this.chapters[this.chapterIndex]);
+        const nextCh = this.chapters[this.chapterIndex];
+        if (prevChapter === 0) {
+          this._seenChapterOpenings.add(nextCh.chapter ?? 1);
+          this.renderBeat(this.currentBeat());
+        } else {
+          this.showChapterOpening(nextCh);
+        }
       } else {
         return this.showEnding();
       }
