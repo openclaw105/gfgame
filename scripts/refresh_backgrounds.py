@@ -16,7 +16,7 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 BG_DIR = ROOT / "背景图"
 MANIFEST = ROOT / "cursor_asset_manifest.json"
-COVER_ROOT = ROOT / "封面.png"
+COVER_ROOT = ROOT / "封面2.png"
 
 
 def file_meta(path: Path) -> dict:
@@ -82,12 +82,12 @@ def main() -> None:
 
     if COVER_ROOT.is_file():
         meta = file_meta(COVER_ROOT)
-        rel = "封面.png"
+        rel = "封面2.png"
         cover = {
             "asset_key": "bg_封面",
             "type": "background",
             "category": "封面",
-            "name": "封面",
+            "name": "封面2",
             "rel_path": rel,
             "abs_path": str(COVER_ROOT.resolve()),
             "web_path": rel,
