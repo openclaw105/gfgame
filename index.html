@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a1228" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>葵与星光旅人</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cinzel+Decorative:wght@700;900&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <img id="bg" class="bg-layer" alt="" />
+      <div class="bg-vignette"></div>
+
+      <div id="flashOverlay" class="flash-overlay" aria-hidden="true"></div>
+      <div id="chapterCurtain" class="chapter-curtain hidden" aria-hidden="true">
+        <div class="chapter-curtain-card">
+          <img class="chapter-curtain-frame" src="新章开幕.png" alt="" decoding="async" />
+          <span id="chapterCurtainNum" class="chapter-curtain-num">第1章</span>
+          <strong id="chapterCurtainTitle" class="chapter-curtain-title">画展偶遇</strong>
+          <div class="chapter-curtain-sand" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div id="modalRoot" class="modal-root"></div>
+
+      <section id="startScreen" class="start-screen start-screen--cover-only">
+        <audio
+          id="coverBgmPrefetch"
+          class="cover-bgm-prefetch"
+          preload="auto"
+          autoplay
+          muted
+          loop
+          playsinline
+          src="bgm/bgm_10_title_ending.mp3?v=20260524a"
+        ></audio>
+        <img class="start-cover-bg" src="封面.png?v=20260524a" alt="葵与星光旅人" decoding="async" />
+        <div id="startParticles" class="start-particles" aria-hidden="true"></div>
+        <div id="startMeteors" class="start-meteors" aria-hidden="true"></div>
+        <div class="start-cover-shade" aria-hidden="true"></div>
+        <div class="start-content start-content--minimal">
+          <div class="start-actions">
+            <button type="button" id="btnStart" class="btn-primary">开始旅程</button>
+            <button type="button" id="btnContinue" class="btn-ghost">读取存档</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="gameUi" class="game-ui hidden">
+        <header class="top-bar">
+          <div class="top-bar-cluster top-bar-cluster--left">
+            <div class="top-bar-menu-anchor">
+              <button type="button" id="btnStats" class="icon-btn" title="菜单" aria-label="菜单" aria-expanded="false" aria-controls="gameMenuPanel">
+                <span class="icon-btn-glow" aria-hidden="true"></span>
+                <span class="icon-btn-particles" aria-hidden="true"><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span></span>
+                <span class="icon-btn-face">☰</span>
+              </button>
+              <aside id="gameMenuPanel" class="game-menu-panel" aria-label="游戏菜单">
+                <button type="button" id="menuBtnStats" class="game-menu-item">数值面板</button>
+                <button type="button" id="menuBtnSound" class="game-menu-item">音乐：开</button>
+              </aside>
+            </div>
+            <button type="button" id="btnHot" class="icon-btn" title="热搜" aria-label="热搜">
+              <span class="icon-btn-glow" aria-hidden="true"></span>
+              <span class="icon-btn-particles" aria-hidden="true"><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span></span>
+              <span class="icon-btn-face">#</span>
+            </button>
+          </div>
+          <div class="chapter-header-frame" aria-label="章节信息">
+            <div class="chapter-title-glow" aria-hidden="true"></div>
+            <div class="chapter-title-particles" aria-hidden="true">
+              <span class="spark"></span><span class="spark"></span><span class="spark"></span>
+              <span class="spark"></span><span class="spark"></span><span class="spark"></span>
+              <span class="spark"></span><span class="spark"></span><span class="spark"></span>
+              <span class="spark"></span>
+            </div>
+            <div class="chapter-frame-ornament chapter-frame-ornament--l" aria-hidden="true"></div>
+            <div class="chapter-chip">
+              <span id="chapterNum" class="chapter-num">第1章</span>
+              <span id="chapterTitle" class="chapter-title-text">画展偶遇</span>
+              <span id="beatProgress" class="beat-progress">节拍</span>
+            </div>
+            <div class="chapter-frame-ornament chapter-frame-ornament--r" aria-hidden="true"></div>
+          </div>
+          <div class="top-bar-cluster top-bar-cluster--right">
+            <button type="button" id="btnPhone" class="icon-btn" title="微信">
+              <span class="icon-btn-glow" aria-hidden="true"></span>
+              <span class="icon-btn-particles" aria-hidden="true"><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span></span>
+              <span class="icon-btn-face">💬</span>
+            </button>
+            <button type="button" id="btnFate" class="icon-btn" title="机缘卡" aria-label="机缘卡">
+              <span class="icon-btn-glow" aria-hidden="true"></span>
+              <span class="icon-btn-particles" aria-hidden="true"><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span></span>
+              <span class="icon-btn-face">✦</span>
+            </button>
+          </div>
+        </header>
+
+        <aside id="statsPanel" class="side-panel stats-panel"></aside>
+        <aside id="hotPanel" class="side-panel hot-panel">
+          <h3>热搜</h3>
+          <ul id="hotList"></ul>
+        </aside>
+        <aside id="phonePanel" class="side-panel phone-panel" aria-label="微信">
+          <div class="wechat-phone">
+            <div class="wechat-phone-notch" aria-hidden="true"></div>
+            <header class="wechat-topbar">
+              <button type="button" class="wechat-back" aria-hidden="true">‹</button>
+              <span class="wechat-topbar-title">微信</span>
+            </header>
+            <div id="chatList" class="wechat-chat-list" role="log"></div>
+            <footer class="wechat-input-bar" aria-hidden="true">
+              <span class="wechat-input-fake">发消息…</span>
+            </footer>
+          </div>
+        </aside>
+
+        <div class="playfield">
+          <div class="game-main">
+            <div id="stage" class="character-stage" aria-live="polite"></div>
+          </div>
+
+          <div id="dialogueDock" class="bottom-stack">
+            <div id="choicePanel" class="choice-panel" aria-hidden="true" aria-label="剧情选项">
+              <p id="choicePanelLabel" class="choice-panel-label">✦ 请点选上方选项</p>
+              <div id="choiceWrap" class="choice-wrap"></div>
+            </div>
+            <div id="dialogueBox" class="dialogue-box" role="button" tabindex="0" aria-label="点击继续对话">
+              <div class="dialogue-head">
+                <strong id="speakerName" class="speaker-name">葵</strong>
+                <button type="button" id="btnNext" class="btn-next" title="继续">▼</button>
+              </div>
+              <p id="dialogueText" class="dialogue-text"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="endingScreen" class="ending-screen hidden"></section>
+    </div>
+
+    <script src="js/registry.js"></script>
+    <script src="js/sfx.js"></script>
+    <script src="js/start-fx.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

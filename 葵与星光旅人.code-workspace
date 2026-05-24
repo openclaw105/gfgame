@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "name": "葵与星光旅人",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.encoding": "utf8",
+    "files.autoGuessEncoding": true
+  }
+}

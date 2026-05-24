@@ -1,0 +1,173 @@
+[
+  {
+    "bgm_id": "bgm_gallery_studio",
+    "environment": "??/??",
+    "mood": "????????",
+    "preferred_bandari_reference": [
+      "Childhood Memory",
+      "Annie?s Wonderland",
+      "The Sounds of Silence"
+    ],
+    "classical_piano_alternative": [
+      "Debussy - Clair de Lune",
+      "Chopin - Nocturne Op.9 No.2",
+      "Satie - Gymnopedie No.1"
+    ],
+    "suggested_file_name": "bgm_01_gallery_studio.wav",
+    "usage_note": "????????????????????????????",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_01_gallery_studio.wav"
+  },
+  {
+    "bgm_id": "bgm_rain_nightroad",
+    "environment": "??/??",
+    "mood": "????????",
+    "preferred_bandari_reference": [
+      "The Foggy Dew",
+      "Snowdreams",
+      "Endless Horizon"
+    ],
+    "classical_piano_alternative": [
+      "Chopin - Prelude Op.28 No.4",
+      "Beethoven - Moonlight Sonata I",
+      "Tchaikovsky - October: Autumn Song"
+    ],
+    "suggested_file_name": "bgm_02_rain_nightroad.wav",
+    "usage_note": "??????????????????????????Pad?",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_02_rain_nightroad.wav"
+  },
+  {
+    "bgm_id": "bgm_mall_toyshop",
+    "environment": "??/???",
+    "mood": "????????",
+    "preferred_bandari_reference": [
+      "Sunny Bay",
+      "Morning Air",
+      "One Day in Spring"
+    ],
+    "classical_piano_alternative": [
+      "Mozart - Piano Sonata K.545 I",
+      "Burgmuller - Arabesque Op.100 No.2",
+      "Tchaikovsky - Dance of the Sugar Plum Fairy"
+    ],
+    "suggested_file_name": "bgm_03_mall_toyshop.wav",
+    "usage_note": "??????????????????????????",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_03_mall_toyshop.wav"
+  },
+  {
+    "bgm_id": "bgm_office_event",
+    "environment": "???/??/???",
+    "mood": "?????????",
+    "preferred_bandari_reference": [
+      "The First Snowflakes",
+      "Beyond the Invisible",
+      "Windmills"
+    ],
+    "classical_piano_alternative": [
+      "Bach - Prelude in C Major BWV 846",
+      "Philip Glass - Opening",
+      "Erik Satie - Gnossienne No.1"
+    ],
+    "suggested_file_name": "bgm_04_office_event.wav",
+    "usage_note": "?????????????????????????+???????",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_04_office_event.wav"
+  },
+  {
+    "bgm_id": "bgm_club_mansion_suite",
+    "environment": "??/??/????",
+    "mood": "?????????",
+    "preferred_bandari_reference": [
+      "Mystica",
+      "Crystal Ball",
+      "The Wind of Change"
+    ],
+    "classical_piano_alternative": [
+      "Chopin - Nocturne Op.27 No.2",
+      "Debussy - Reverie",
+      "Liszt - Liebestraum No.3"
+    ],
+    "suggested_file_name": "bgm_05_club_mansion_suite.wav",
+    "usage_note": "?????????????????????????????",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_05_club_mansion_suite.wav"
+  },
+  {
+    "bgm_id": "bgm_film_set",
+    "environment": "??",
+    "mood": "????????",
+    "preferred_bandari_reference": [
+      "New Morning",
+      "Irish Lullaby",
+      "Dream Catcher"
+    ],
+    "classical_piano_alternative": [
+      "Schumann - Kinderszenen: Traumerei",
+      "Mendelssohn - Songs Without Words Op.19 No.1",
+      "Grieg - Arietta Op.12 No.1"
+    ],
+    "suggested_file_name": "bgm_06_film_set.wav",
+    "usage_note": "??????????????????????????",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_06_film_set.wav"
+  },
+  {
+    "bgm_id": "bgm_festival_concert",
+    "environment": "???/???",
+    "mood": "????????",
+    "preferred_bandari_reference": [
+      "Heaven Blue",
+      "The Daylight",
+      "Good Morning Sunshine"
+    ],
+    "classical_piano_alternative": [
+      "Tchaikovsky - The Seasons: June Barcarolle",
+      "Dvorak - Humoresque No.7",
+      "Mozart - Rondo Alla Turca"
+    ],
+    "suggested_file_name": "bgm_07_festival_concert.wav",
+    "usage_note": "???????????????????????????",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_07_festival_concert.wav"
+  },
+  {
+    "bgm_id": "bgm_airport_subway",
+    "environment": "??/??",
+    "mood": "????????",
+    "preferred_bandari_reference": [
+      "Farewell Song",
+      "Lonely Whistler",
+      "Melody of Hope"
+    ],
+    "classical_piano_alternative": [
+      "Chopin - Etude Op.10 No.3",
+      "Schubert - Impromptu Op.90 No.3",
+      "Rachmaninoff - Vocalise"
+    ],
+    "suggested_file_name": "bgm_08_airport_subway.wav",
+    "usage_note": "?????????????????????????????????",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_08_airport_subway.wav"
+  },
+  {
+    "bgm_id": "bgm_dream_park",
+    "environment": "???/????",
+    "mood": "????????",
+    "preferred_bandari_reference": [
+      "Annie?s Wonderland",
+      "Childhood Memory",
+      "Spring Water"
+    ],
+    "classical_piano_alternative": [
+      "Debussy - Arabesque No.1",
+      "Tchaikovsky - The Seasons: April Snowdrop",
+      "Schumann - Kinderszenen: Of Foreign Lands and Peoples"
+    ],
+    "suggested_file_name": "bgm_09_dream_park.wav",
+    "usage_note": "????????????????????/??/?????",
+    "copyright_note": "Bandari and most modern recordings are copyrighted. Use only if you own/licensed the recording. Classical composition may be public domain, but specific recordings still need licensing.",
+    "drop_in_path": "D:/k/GFgame/bgm/bgm_09_dream_park.wav"
+  }
+]
