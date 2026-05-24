@@ -94,12 +94,12 @@ CHAPTERS_META = [
     {
         "n": 7,
         "title": "画室夜路",
-        "bg": "bg_画室白天",
-        "bg2": "bg_夜路1",
-        "bg3": "bg_夜路2",
+        "bg": "bg_夜路1",
+        "bg2": "bg_夜路2",
+        "bg3": "bg_夜路3",
         "bgm": "bgm_nightroad",
-        "scene_pool": ["bg_画室白天", "bg_夜路1", "bg_夜路2", "bg_夜路3"],
-        "finale_bg": "bg_画室晚上",
+        "scene_pool": ["bg_夜路1", "bg_夜路2", "bg_夜路3", "bg_地铁", "bg_画室晚上"],
+        "finale_bg": "bg_夜路2",
         "pad_bg": "bg_夜路1",
         "transition_bg": ["bg_地铁", "bg_画室晚上"],
     },
@@ -181,8 +181,8 @@ CHAPTER_HINTS = {
         (("演唱会", "灯海", "散场", "空瓶"), "bg_演唱会1"),
     ],
     7: [
-        (("画室灯", "锁门下楼", "改稿", "画笔"), "bg_画室白天"),
-        (("末班车", "风很冷", "夜风", "楼下", "刘哥", "草莓", "没车"), "bg_夜路1"),
+        (("锁门下楼", "街灯", "人行道", "外套", "末班车", "风很冷", "夜风", "楼下", "刘哥", "草莓", "没车"), "bg_夜路1"),
+        (("上楼", "锁门上楼", "改稿", "画笔", "画室灯", "宵夜", "沙发", "卧室"), "bg_画室晚上"),
         (("地铁", "地铁站", "走十分钟"), "bg_地铁"),
         (("打车", "网约车", "车费"), "bg_夜路2"),
         (("三轮", "大叔", "车铃"), "bg_夜路3"),
@@ -258,14 +258,42 @@ class SceneTracker:
 SPEAKERS = {
     1: [("narrator", None), ("葵", "char_葵_开心"), ("肖战", "char_肖战_伪装1"), ("薇薇", "char_薇薇_开心")],
     2: [("narrator", None), ("葵", "char_葵_无语"), ("薇薇", "char_薇薇_惊讶"), ("肖战", "char_肖战_伪装1")],
-    3: [("narrator", None), ("薇薇", "char_薇薇_疲惫"), ("龚俊", "char_龚俊_开心"), ("肖战", "char_肖战_担心")],
-    4: [("narrator", None), ("卢昱晓", "char_卢昱晓_悲伤"), ("宋威龙", "char_宋威龙_开心"), ("葵", "char_葵_害羞")],
+    3: [
+        ("narrator", None),
+        ("薇薇", "char_薇薇_疲惫"),
+        ("欧阳娜娜", "char_欧阳娜娜_开心"),
+        ("田曦薇", "char_田曦薇_开心"),
+        ("龚俊", "char_龚俊_开心"),
+        ("肖战", "char_肖战_担心"),
+    ],
+    4: [
+        ("narrator", None),
+        ("薇薇", "char_薇薇_开心"),
+        ("卢昱晓", "char_卢昱晓_开心"),
+        ("宋威龙", "char_宋威龙_开心"),
+        ("葵", "char_葵_害羞"),
+    ],
     5: [("narrator", None), ("宋威龙", "char_宋威龙_开心"), ("张婧仪", "char_张婧仪_开心"), ("肖战", "char_肖战_生气")],
     6: [("narrator", None), ("张艺兴", "char_张艺兴_开心"), ("肖战", "char_肖战_沉思"), ("孟子义", "char_孟子义_开心")],
     7: [("narrator", None), ("李昀锐", "char_李昀锐_开心"), ("葵", "char_葵_疲惫"), ("肖战", "char_肖战_害羞")],
     8: [("narrator", None), ("薇薇", "char_薇薇_生气"), ("李昀锐", "char_李昀锐_开心"), ("龚俊", "char_龚俊_开心"), ("肖战", "char_肖战_害羞")],
-    9: [("narrator", None), ("赵今麦", "char_赵今麦_开心"), ("鞠婧祎", "char_鞠婧祎_愤怒"), ("肖战", "char_肖战_忧伤")],
-    10: [("narrator", None), ("葵", "char_葵_开心"), ("肖战", "char_肖战_开心"), ("张艺兴", "char_张艺兴_跳舞")],
+    9: [
+        ("narrator", None),
+        ("赵今麦", "char_赵今麦_开心"),
+        ("鞠婧祎", "char_鞠婧祎_愤怒"),
+        ("欧阳娜娜", "char_欧阳娜娜_开心"),
+        ("田曦薇", "char_田曦薇_开心"),
+        ("肖战", "char_肖战_忧伤"),
+    ],
+    10: [
+        ("narrator", None),
+        ("葵", "char_葵_开心"),
+        ("欧阳娜娜", "char_欧阳娜娜_开心"),
+        ("田曦薇", "char_田曦薇_开心"),
+        ("卢昱晓", "char_卢昱晓_开心"),
+        ("肖战", "char_肖战_开心"),
+        ("张艺兴", "char_张艺兴_跳舞"),
+    ],
 }
 
 ASSET = {
@@ -276,7 +304,9 @@ ASSET = {
     "张艺兴": "char_张艺兴_开心",
     "李昀锐": "char_李昀锐_开心",
     "龚俊": "char_龚俊_开心",
-    "卢昱晓": "char_卢昱晓_悲伤",
+    "卢昱晓": "char_卢昱晓_开心",
+    "欧阳娜娜": "char_欧阳娜娜_开心",
+    "田曦薇": "char_田曦薇_开心",
     "张婧仪": "char_张婧仪_开心",
     "孟子义": "char_孟子义_开心",
     "赵今麦": "char_赵今麦_开心",
@@ -299,7 +329,22 @@ ASSET = {
 }
 
 NPC_SPEAKERS = frozenset(ASSET.keys()) - frozenset(
-    {"葵", "肖战", "薇薇", "宋威龙", "张艺兴", "李昀锐", "龚俊", "卢昱晓", "张婧仪", "孟子义", "赵今麦", "鞠婧祎"}
+    {
+        "葵",
+        "肖战",
+        "薇薇",
+        "宋威龙",
+        "张艺兴",
+        "李昀锐",
+        "龚俊",
+        "卢昱晓",
+        "张婧仪",
+        "孟子义",
+        "赵今麦",
+        "鞠婧祎",
+        "欧阳娜娜",
+        "田曦薇",
+    }
 )
 
 CHOICE_BEAT_POSITIONS = [7, 14, 21, 28, 32, 35]
@@ -560,6 +605,35 @@ def emotion_for(speaker, text, ch_n=None, muscle_sprite=False, xz_reveal=False, 
     return "一般"
 
 
+def normalize_character_emotion(speaker, emo):
+    """女角色组无「一般」立绘，映射到现有表情。"""
+    if speaker == "欧阳娜娜":
+        if emo in ("一般", "疲惫", "无语", "沉思", "担心", "惊讶", "害羞"):
+            return "开心"
+        if emo == "悲伤":
+            return "伤心"
+        if emo == "生气":
+            return "愤怒"
+        return emo if emo in ("开心", "傲慢", "伤心", "愤怒") else "开心"
+    if speaker == "田曦薇":
+        if emo in ("一般", "疲惫", "无语", "沉思", "担心", "惊讶", "害羞"):
+            return "开心"
+        if emo == "伤心":
+            return "悲伤"
+        if emo == "生气":
+            return "愤怒"
+        return emo if emo in ("开心", "傲慢", "悲伤", "愤怒") else "开心"
+    if speaker == "卢昱晓":
+        if emo in ("一般", "疲惫", "无语", "沉思", "担心", "惊讶", "害羞"):
+            return "开心"
+        if emo == "伤心":
+            return "悲伤"
+        if emo == "生气":
+            return "愤怒"
+        return emo if emo in ("开心", "傲慢", "悲伤", "愤怒") else "开心"
+    return emo
+
+
 def asset_for(speaker, ch_n, text=None, muscle_sprite=False, xz_reveal=False, xz_flashback_masked=False):
     if speaker == "narrator":
         return None
@@ -579,6 +653,7 @@ def asset_for(speaker, ch_n, text=None, muscle_sprite=False, xz_reveal=False, xz
             xz_reveal=xz_reveal,
             xz_flashback_masked=xz_flashback_masked,
         )
+        emo = normalize_character_emotion(speaker, emo)
         key = f"char_{speaker}_{emo}"
         sp = SPEAKERS.get(ch_n, SPEAKERS[1])
         if speaker in {n for n, _ in sp}:
